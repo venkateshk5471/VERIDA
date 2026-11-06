@@ -7,7 +7,7 @@ from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder=".")
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "replace-this-secret-before-deployment")
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(os.path.abspath(os.path.dirname(__file__)), "verida.db")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
